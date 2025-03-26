@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Read the Complete Book</title>
+    </head>
+    <body>
+      <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url('book.jpg'); /* Path to your background image */
+        background-size: cover; /* Ensure the image covers the entire screen */
+        background-position: center ; /* Centers the image */
+        color: #333;
+        margin: 2;
+        padding: 0;
+      }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #f5f5f5;
+      }
+      
+      .home-page {
+        padding: 20px;
+      }
+      
+      .book-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      
+      .book-card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s;
+        width: 180px;
+      }
+      
+      .book-card:hover {
+        transform: scale(1.05);
+      }
+      
+      .book-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      
+      .book-page {
+        display: none;
+        padding: 20px;
+      }
+      
+      .go-home-btn {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .go-home-btn:hover {
+        background-color: #c440d8;
+      }
+      
+      </style>
+      <!-- Home Page Section -->
+      <div id="homePage" class="home-page">
+        <header>
+          <h1>WELCOME TO THE BOOK LIBRARY</h1>
+          <p>Click On The Images Below To Read The Complete Books.</p>
+        </header>
+        
+        <section class="book-container">
+          <!-- Book List -->
+          <div class="book-card">
+            <img src="harry.jpg" alt="Harry Potter Cover" class="book-image" onclick="openBook('harrypotter')">
+            <p>Harry Potter</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="Rich_Dad_Poor_Dad.jpg" alt="Rich Dad Poor Dad Cover" class="book-image" onclick="openBook('book2')">
+            <p>Rich Dad Poor Dad</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="the alchemist.jpg" alt="The Alchemist Cover" class="book-image" onclick="openBook('book3')">
+            <p>The Alchemist</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="secret.jpeg" alt="The Secret Cover" class="book-image" onclick="openBook('book4')">
+            <p>The Secret</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="mocking bird.webp" alt="To_Kill_A_Mockingbird" class="book-image" onclick="openBook('book5')">
+            <p>To kill a mockingbird</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="atomic.jpg" alt="Atomic Habits Cover" class="book-image" onclick="openBook('book6')">
+            <p>Atomic Habits</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="ikihai.jpg" alt="Ikigai Cover" class="book-image" onclick="openBook('book7')">
+            <p>Ikigai</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="eliza.jpg" alt="Big Magic Cover" class="book-image" onclick="openBook('book8')">
+            <p>Big Magic</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="L.jpg" alt="Mans search for meaning Cover" class="book-image" onclick="openBook('book9')">
+            <p>Man's search for meaning</p>
+          </div>
+    
+          <div class="book-card">
+            <img src="bird.jpeg" alt="The gift of Discerning of spirits Cover" class="book-image" onclick="openBook('book10')">
+            <p>The gift of Discerning of spirits</p>
+          </div>
+        </section>
+      </div>
+    
+      <!-- Book Content Section (hidden by default) -->
+      <div id="bookPage" class="book-page">
+        <header>
+          <h1>Complete Book</h1>
+          <button class="go-home-btn" onclick="goHome()">Go to Home Page</button>
+        </header>
+    
+        <section class="book-content" id="harrypotter" style="display: none;">
+          <h2>Harry Potter</h2>
+          <iframe src="harrypotter.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book2" style="display: none;">
+          <h2>Rich Dad Poor Dad</h2>
+          <iframe src="Rich Dad Poor Dad.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book3" style="display: none;">
+          <h2>The Alchemist</h2>
+          <iframe src="The alchemist.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book4" style="display: none;">
+          <h2>The Secret</h2>
+          <iframe src="Master-Key-System.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book5" style="display: none;">
+          <h2>To kill a mockingbird</h2>
+          <iframe src="mockingbirdpdf.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book6" style="display: none;">
+          <h2>Atomic Habits</h2>
+          <iframe src="Atomic habits ( PDFDrive ).pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book7" style="display: none;">
+          <h2>Ikigai</h2>
+          <iframe src="Ikigai _ the Japanese secret to a long and happy life .pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book8" style="display: none;">
+          <h2>Big Magic</h2>
+          <iframe src="big-magic-elizabeth-gilbert2.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book9" style="display: none;">
+          <h2>Man's search for Meaning</h2>
+          <iframe src="Man_s Search For Meaning.pdf" width="100%" height="600px"></iframe>
+        </section>
+    
+        <section class="book-content" id="book10" style="display: none;">
+          <h2>The gift of Discerning of spirits</h2>
+          <iframe src="The Gift of Discernment Of Spirits by Norvel Hayes.pdf" width="100%" height="600px"></iframe>
+        </section>
+      </div>
+       <script> 
+        
+     // Function to open a specific book and hide others
+    function openBook(bookId, pdfSrc) {
+      // Hide home page and show book page
+      document.getElementById("homePage").style.display = "none";
+      document.getElementById("bookPage").style.display = "block";
+    
+      // Hide all book content sections, including new additions
+      document.querySelectorAll(".book-content").forEach(book => {
+        book.style.display = "none";
+      });
+    
+      // Show the selected book
+      let selectedBook = document.getElementById(bookId);
+      if (selectedBook) {
+        selectedBook.style.display = "block";
+        
+        // Open the PDF in an iframe
+        let iframe = selectedBook.querySelector("iframe");
+        if (iframe && pdfSrc) {
+          iframe.src = pdfSrc;
+        }
+      } else {
+        alert("Book not found!"); // Fallback error handling
+      }
+    }
+    
+    // Function to go back to home page
+    function goHome() {
+      document.getElementById("bookPage").style.display = "none";
+      document.getElementById("homePage").style.display = "block";
+    }
+    
+      </script>
+      <button class="back-button" onclick="window.location.href='../demo1.html'">Back to Home</button> 
+    </body>
+    </html>
+    
