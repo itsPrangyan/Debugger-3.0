@@ -28,6 +28,25 @@ Many individuals struggle with mental health challenges such as anxiety, depress
 - **Mood Tracking & Insights** – Helps users monitor and improve their mental well-being over time.
 - **User-Friendly & Stigma-Free Access** – Designed for ease of use, making mental health support more accessible.
 
+## **Snapshots**
+Here are some snapshots of the MindLyft platform:
+
+![Home Page](snapshots/homepage.png)
+*MindLyft Home Page*
+
+![Chatbot Interface](snapshots/chatbot.png)
+*AI Chatbot Interface*
+
+![Feature](snapshots/features.png)
+*Feature - games, meditation, music and meditation*
+
+![Secret Diary](snapshots/secretDiary.png)
+*Secret Diary*
+
+![Feedback](snapshots/feedBack.png)
+*Feedback form*
+
+
 ## **Tech Stack**
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express.js
@@ -41,8 +60,8 @@ Many individuals struggle with mental health challenges such as anxiety, depress
 - Secret Diary Enhancement
 
 ## **Contributors**
-- **[Prangyan Paramita Patra]** – Project Lead 
-- **[Sulagna Patro]**  
-- **[Kumkum Mohanty]** 
-- **[S N Kirtti Bijaini]** 
+- **Prangyan Paramita Patra** – Project Lead 
+- **Sulagna Patro**  
+- **Kumkum Mohanty** 
+- **S N Kirtti Bijaini** 
 
