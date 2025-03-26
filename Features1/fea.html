@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4682b4;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        .block {
+            background-color: #87ceeb;
+            border-radius: 12px;
+            padding: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .block:hover {
+            transform: scale(1.08);
+            background-color: #5f9ea0;
+        }
+        .footer {
+            background-color: #4682b4;
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Mental Health Support</div>
+    <div class="container">
+        <div class="block" onclick="alert('Explore relaxing music to enhance your mood!')">Music</div>
+        <div class="block" onclick="window.location.href='game.html'">Games</div>
+        <div class="block" onclick="alert('Discover books that promote mental well-being!')">Books</div>
+        <div class="block" onclick="window.location.href='meditation.html'">Meditation</div>
+    </div>
+    <div class="footer">&copy; 2025 Mental Health Support</div>
+</body>
+</html>
