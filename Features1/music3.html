@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        /* Set background image */
+        body {
+            display: flex;
+            justify-content: center; /* Align content horizontally center */
+            align-items: center;     /* Align content vertically center */
+            height: 100vh;           /* Take full viewport height */
+            margin: 0;               /* Remove default margin */
+            background-image: url('bg-image0003.jpeg'); /* Set the background image */
+            background-size: cover; /* Cover the whole page */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Make the background fixed during scroll */
+            color: white; /* Text color for contrast */
+        }
+
+        /* Container for the audio player, dropdown, and image */
+        .audio-container {
+            text-align: center;  /* Center the text */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+        }
+
+        /* Style for the dropdown */
+        #song_selector {
+            font-size: 24px; /* Increase font size */
+            padding: 20px;   /* Increase padding */
+            margin-top: 30px; /* Increase margin-top */
+            border-radius: 8px; /* Rounded corners */
+            border: 2px solid #ccc; /* Darker border */
+            cursor: pointer;
+            background-color: #2ba7ef;
+            width: 300px; /* Increase width */
+        }
+
+        /* Style for the song image */
+        #song_image {
+            width: 400px;    /* Increase width */
+            height: auto;    /* Maintain aspect ratio */
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Smooth transition on hover */
+        }
+
+        /* Hover effect for song image */
+        #song_image:hover {
+            transform: scale(1.1); /* Slight zoom effect */
+        }
+
+        /* Style for the toggle button image */
+        #toggle_button {
+            cursor: pointer;
+            margin-top: 20px; /* Increase top margin */
+            width: 80px;  /* Increase size */
+            height: 80px; /* Increase size */
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- Audio Player -->
+<audio id="audio_play" preload="auto">
+    <source src="song0001.ogg" type="audio/ogg" />
+    <source src="song0001.mp3" type="audio/mpeg" />
+</audio>
+<div class="audio-container">
+<!-- Song Image Display -->
+<img id="song_image" src="image0001.jpeg" alt="Song Image" style="width:200px; height:auto;"  onClick="toggleAudio();" />
+
+<select id="song_selector" onChange="changeSong();">
+    <option value="song0001">Desi Girl</option>
+    <option value="song0002">Aayi Na</option>
+    <option value="song0003">Besharam Rang</option>
+    <option value="song0004">Badtameez Dil</option>
+    <option value="song0005">Badri Ki Dulhania</option>
+    <option value="song0006">Malang Sajna</option>
+    <option value="song0007">Crazy Kiya Re</option>
+    <option value="song0008">Chikni Chameli</option>
+    <option value="song0009">Befikre</option>
+    <option value="song00010">Radha</option>
+
+    </select>
+
+    <a href="button.html"> <!-- Replace "index.html" with your main page URL -->
+        <button id="go_back_button">Go Back</button>
+    </a>
+    </div>
+
+<script>
+    var songs = {
+        "song0001": {
+            ogg: "song0001.ogg",
+            mp3: "song0001.mp3",
+            image: "image0001.jpeg"  // Image for this song
+        },
+        "song0002": {
+            ogg: "song0002.ogg",
+            mp3: "song0002.mp3",
+            image: "image0002.jpeg"  // Image for this song
+        },
+        "song0003": {
+            ogg: "song0003.ogg",
+            mp3: "song0003.mp3",
+            image: "image0003.jpeg"  // Image for this song
+        },
+        "song0004": {
+            ogg: "song0004.ogg",
+            mp3: "song0004.mp3",
+            image: "image0004.jpeg"
+        },
+        "song0005": {
+            ogg: "song0005.ogg",
+            mp3: "song0005.mp3",
+            image: "image0005.jpeg"
+        },
+        "song0006": {
+            ogg: "song0006.ogg",
+            mp3: "song0006.mp3",
+            image: "image0006.jpeg"
+        },
+        "song0007": {
+            ogg: "song0007.ogg",
+            mp3: "song0007.mp3",
+            image: "image0007.jpeg"
+        },
+        "song0008": {
+            ogg: "song0008.ogg",
+            mp3: "song0008.mp3",
+            image: "image0008.jpeg"
+        },
+        "song0009": {
+            ogg: "song0009.ogg",
+            mp3: "song0009.mp3",
+            image: "image0009.jpeg"
+        },
+         "song00010": {
+            ogg: "song00010.ogg",
+            mp3: "song00010.mp3",
+            image: "image00010.jpeg"
+        }
+
+
+    };
+
+    function toggleAudio() {
+        var audio = document.getElementById('audio_play');
+        var button = document.getElementById('toggle_button');
+        
+        if (audio.paused) {
+            audio.play();
+            button.src = "image.jpeg";  // Change image to pause button
+        } else {
+            audio.pause();
+            button.src = "image.jpeg";  // Change image to play button
+        }
+    }
+
+    function changeSong() {
+        var audio = document.getElementById('audio_play');
+        var songSelector = document.getElementById('song_selector');
+        var selectedSong = songSelector.value;
+
+        // Update audio sources based on selected song
+        var song = songs[selectedSong];
+        audio.innerHTML = `
+            <source src="${song.ogg}" type="audio/ogg" />
+            <source src="${song.mp3}" type="audio/mpeg" />
+        `;
+
+        // Update the song image based on selected song
+        document.getElementById('song_image').src = song.image;
+
+        // Reset to play the new song from the start
+        audio.load(); // This reloads the new song
+        if (!audio.paused) {
+            audio.play(); // Auto-play the new song if it's not paused
+            document.getElementById('toggle_button').src = "image.jpeg"; // Update the button to show pause
+        }
+    }
+</script>
+</body>
+</html>
