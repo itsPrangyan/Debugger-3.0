@@ -50,8 +50,7 @@ Here are some snapshots of the MindLyft platform:
 ## **Tech Stack**
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express.js
-- **Database:** SQL (for secure conversation storage)
-- **AI Chatbot:** Machine Learning/NLP integration
+- **AI Chatbot:** NLP integration
 
 ## **Future Enhancements**
 - Integration with wearable devices for real-time mental health monitoring.
