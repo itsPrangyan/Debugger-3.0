@@ -1,0 +1,63 @@
+/* Center the body content */
+body {
+    display: flex;
+    justify-content: center; /* Align content horizontally center */
+    align-items: center;     /* Align content vertically center */
+    height: 100vh;           /* Take full viewport height */
+    margin: 0;               /* Remove default margin */
+    
+    /* Set the background image */
+    background-image: url('image.jpeg'); /* Replace with the URL of your image */
+    background-size: cover;   /* Make the background image cover the entire page */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+}
+
+/* The container for the buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allows buttons to wrap onto the next line */
+    justify-content: center; /* Center buttons horizontally within container */
+    gap: 30px;        /* Increased space between buttons */
+    width: 800px;     /* Limit width of container */
+    padding: 20px;    /* Add some padding to avoid buttons being too close to edges */
+    background-color: rgba(255, 255, 255, 0.7); /* Optional: Add semi-transparent background */
+    border-radius: 15px; /* Optional: Round the corners of the container */
+}
+
+/* Style for individual buttons */
+.button {
+    padding: 30px 60px;  /* Increased padding to make buttons larger */
+    font-size: 30px;      /* Increased font size */
+    cursor: pointer;
+    flex: 0 0 240px;      /* Buttons will take up 240px of width */
+    text-align: center;   /* Center text within the button */
+    border: none;         /* Remove default border */
+    background-color: #7e90e8; /* Added background color */
+    color: white;         /* Text color */
+    border-radius: 8px;   /* Optional: Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+/* Optional: Button hover effect */
+.button:hover {
+    background-color: #b776cf; /* Darker shade on hover */
+}
+
+.back-button {
+    position: fixed; /* Fixes the button at a specific location on the page */
+    bottom: 100px; /* Positions it 20px from the bottom of the page */
+    left: 50%; /* Centers the button horizontally */
+    transform: translateX(-50%); /* Adjusts the button position to ensure perfect horizontal centering */
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #5f9ea0;
+}
