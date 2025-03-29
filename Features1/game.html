@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Pop Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4682b4;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-color: white;
+            overflow: hidden;
+            margin-top: 20px;
+            border: 2px solid #4682b4;
+        }
+        .bubble {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+            animation: drop 5s linear forwards;
+        }
+        @keyframes drop {
+            from { top: -60px; }
+            to { top: 100%; }
+        }
+        .quote-container {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #4682b4;
+            min-height: 40px;
+        }
+        .footer {
+            background-color: #4682b4;
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #5f9ea0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Bubble Pop Game</div>
+    <button class="back-button" onclick="window.location.href='../index.html'">Back to Home</button>       
+    <div class="game-container" id="gameArea"></div>
+    <div class="quote-container" id="quoteContainer">Click a bubble to receive a motivational message!</div>
+
+    <script>
+        const quotes = [
+            "You are stronger than you think!",
+            "Believe in yourself!",
+            "Every day is a fresh start!",
+            "Keep pushing forward!",
+            "You are loved and valued!",
+            "Happiness is within you!",
+            "You can do anything you set your mind to!",
+            "Don't wait for opportunity. Create it.",
+            "Success doesn't come from what you do occasionally, it comes from what you do consistently.",
+            "The best way to predict the future is to create it.",
+            "The only limit to our realization of tomorrow is our doubts of today."
+        ];
+
+        const colors = ["#ff6347", "#ffa500", "#32cd32", "#1e90ff", "#ff69b4", "#6a5acd", "#ff4500"]; 
+
+        function createBubble() {
+            let bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = Math.random() * 90 + '%';
+            bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            bubble.innerText = 'Click!';
+            bubble.onclick = function() {
+                document.getElementById('quoteContainer').innerText = quotes[Math.floor(Math.random() * quotes.length)];
+                bubble.remove();
+            };
+            document.getElementById('gameArea').appendChild(bubble);
+            setTimeout(() => bubble.remove(), 5000);
+        }
+
+        setInterval(createBubble, 1500); // Bubbles appear every 1.5 seconds
+    </script>
+
+    <div class="footer">&copy; 2025 Mental Health Support</div>
+</body>
+</html>
